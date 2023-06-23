@@ -1,10 +1,10 @@
 import Buttonofcalc from "./Buttonofcalc";
 
-
+import './NumberButton.css'
 function NumberButtons(props) {
     const array = [1,2,3,4,5,6,7,8,9];
     return (
-        <div style={styles.div}>
+        <div className={'numberButton'}>
         {
             array.map((num)=>{
                 return (
@@ -26,15 +26,7 @@ function NumberButtons(props) {
 
 }
 const styles = {
-    div:{
-        display:'flex',
-        flexOrder:'row',
-        flexWrap:'wrap',
-        justifyContent: 'center',
-        width: '60%',
-        height: '65vh',
-        alignItems: 'center',
-    },
+
     buttonZero: {
         width:'70%',
         maxWidth:'90%',

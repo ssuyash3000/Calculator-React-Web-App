@@ -1,5 +1,5 @@
 
-import './screen.css';
+import './Screen.css';
 function Screen(props) {
 
     return (

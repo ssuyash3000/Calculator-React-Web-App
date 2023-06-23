@@ -1,0 +1,10 @@
+.numberButton{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    width: 60%;
+    height: 65vh;
+    align-items: center;
+    position: relative;
+}
