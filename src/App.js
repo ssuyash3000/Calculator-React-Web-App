@@ -19,7 +19,19 @@ function App() {
           );
         })
       }
+      <Buttonofcalc
+          key={0}
+          numofbutton={0}
+          style={styles.buttonZero}
+      />
     </div>
   );
+}
+const styles = {
+  buttonZero: {
+    width:'90%',
+    maxWidth:'90%',
+
+  }
 }
 export default App;
