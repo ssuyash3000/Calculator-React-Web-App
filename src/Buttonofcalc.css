@@ -2,9 +2,12 @@
     text-align: center;
     font-size: xx-large;
 
-    height: 140px;
-    width: 140px;
-    border: white 20px solid;
+    height: 10%;
+    width: 20%;
+    border: white 2px solid;
 
     margin: 10px;
   }
+.button:hover {
+    cursor:pointer;
+}
