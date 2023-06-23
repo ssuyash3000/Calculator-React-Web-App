@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import './App.css';
-import Buttonofcalc from './Buttonofcalc';
 import Screen from "./Screen";
 import Operators from "./Operators";
 import NumberButtons from "./NumberButtons";
