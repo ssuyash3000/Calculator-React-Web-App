@@ -1,10 +1,8 @@
 import Buttonofcalc from "./Buttonofcalc";
-import {useState} from "react";
+
 
 function NumberButtons(props) {
-    const [array, setState] = useState([]);
-    for(let i = 0; i < 9; i++)
-        array.push(i + 1);
+    const array = [1,2,3,4,5,6,7,8,9];
     return (
         <div style={styles.div}>
         {
@@ -33,7 +31,6 @@ const styles = {
         flexOrder:'row',
         flexWrap:'wrap',
         justifyContent: 'center',
-        // border:'yellow 2px solid',
         width: '60%',
         height: '65vh',
         alignItems: 'center',
