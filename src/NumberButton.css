@@ -3,8 +3,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:center;
-    width: 60%;
-    height: 65vh;
+    width: fit-content;
+    height: fit-content;
     align-items: center;
     position: relative;
+    align-content: center;
 }

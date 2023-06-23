@@ -37,11 +37,11 @@ function Operators(props) {
 const styles = {
     button:{
         width: '80%',
-
+        height: '30%',
     },
     buttonEqual:{
         width: '80%',
-        height: '27%'
+        height: '30%'
     }
 }
 export default Operators;

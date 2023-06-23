@@ -5,21 +5,26 @@ function NumberButtons(props) {
     const array = [1,2,3,4,5,6,7,8,9];
     return (
         <div className={'numberButton'}>
-        {
-            array.map((num)=>{
-                return (
-                    <Buttonofcalc
-                        key={num}
-                        numofbutton={num}
-                    />
-                );
-            })
-        }
-        <Buttonofcalc
-            key={0}
-            numofbutton={0}
-            style={styles.buttonZero}
-        />
+            <Buttonofcalc
+                key={'clear'}
+                numofbutton={'clear'}
+                style={styles.buttonZero}
+            />
+            {
+                array.map((num)=>{
+                    return (
+                        <Buttonofcalc
+                            key={num}
+                            numofbutton={num}
+                        />
+                    );
+                })
+            }
+            <Buttonofcalc
+                key={0}
+                numofbutton={0}
+                style={styles.buttonZero}
+            />
 
         </div>
     );
@@ -28,8 +33,7 @@ function NumberButtons(props) {
 const styles = {
 
     buttonZero: {
-        width:'70%',
-        maxWidth:'90%',
+        width:'80%',
         height: '10%',
     }
 }
