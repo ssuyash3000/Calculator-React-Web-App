@@ -1,9 +1,10 @@
 import './Buttonofcalc.css';
 
 function Buttonofcalc(props) {
-    const {numofbutton, style} = props;
+    const {numofbutton, style, handleInputButton} = props;
     return (
-      <div className="button"style={style}>
+      <div className="button" style={style}
+        onClick={handleInputButton} id={numofbutton}>
           {`${numofbutton}`}
 
       </div>

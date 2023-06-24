@@ -1,10 +1,14 @@
 
 import './Screen.css';
 function Screen(props) {
+    let {state, handleInputKeyBoard} = props;
 
     return (
         <div className="screen">
-            hi, this is Screen 1
+           <input
+               value={state}
+               onKeyPress={handleInputKeyBoard}
+               onChange={handleInputKeyBoard}/>
         </div>
 
     );

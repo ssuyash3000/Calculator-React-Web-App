@@ -2,30 +2,36 @@
 import './Operators.css';
 import Buttonofcalc from "./Buttonofcalc";
 function Operators(props) {
-
+    const {handleInputButton} = props;
     return (
         <div className='operator'>
             <Buttonofcalc
+                handleInputButton={handleInputButton}
                 style={styles.button}
                 numofbutton={'+'}
                 key={'+'}
             />
             <Buttonofcalc
+                handleInputButton={handleInputButton}
                 style={styles.button}
                 numofbutton={'-'}
                 key={'-'}
             />
             <Buttonofcalc
+
+                handleInputButton={handleInputButton}
                 style={styles.button}
                 numofbutton={'*'}
                 key={'*'}
             />
             <Buttonofcalc
+                handleInputButton={handleInputButton}
                 style={styles.button}
                 numofbutton={'/'}
                 key={'/'}
             />
             <Buttonofcalc
+                handleInputButton={handleInputButton}
                 style={styles.buttonEqual}
                 numofbutton={'='}
                 key={'='}
