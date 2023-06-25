@@ -7,7 +7,7 @@ function Screen(props) {
         <div className="screen">
            <input
                value={state}
-
+                onKeyPress={handleInputKeyBoard}
                onChange={handleInputKeyBoard}/>
         </div>
 
