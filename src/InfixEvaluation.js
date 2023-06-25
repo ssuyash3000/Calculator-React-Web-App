@@ -9,17 +9,60 @@ function symbolCheck(symbol){
             return true;
         case '/':
             return true;
-        case '(':
-            return true;
-        case ')':
-            return true;
 
         default:
             return false;
     }
 }
+function expressionCheck(expression){
+    let ans = true;
+    let stack1= [];
+    let stack2= [];
+
+    for(let i = 0; i < expression.length; i++){
+        if ((expression[i] < '0' && expression[i] > '9') && !symbolCheck(expression[i]))
+        {
+           ans = false;
+           break;
+        }
+        else if((expression[i] >= '0' && expression[i] <= '9')){
+
+            stack1.push(expression[i]);
+        }
+        else if(symbolCheck(expression[i]) && expression[i] !== ')'){
+            if(i === 0 || symbolCheck(expression[i-1]) === true){
+                ans = false;
+                break;
+            }
+            stack2.push(expression[i]);
+        }
+        else if(expression[i] === ')'){
+            while(stack2[stack2.length-1] !== '('){
+                if(stack2.length === 0){
+                    ans = false;
+                    break;
+                }
+                stack2.pop();
+                if(stack1.length < 2){
+                    ans = false;
+                    break;
+                }
+
+                stack1.pop();
+                stack1.pop();
+
+            }
+            stack2.pop();
+        }
+    }
+
+    return ans;
+}
 function Evaluate(expression)
 {
+
+    if(expressionCheck(expression)===false)
+        return ("Invalid Expression ");
     let tokens = expression.split('');
 
     // Stack for numbers: 'values'
@@ -35,10 +78,6 @@ function Evaluate(expression)
         {
             continue;
         }
-        if ((tokens[i] < '0' && tokens[i] > '9') && !symbolCheck(tokens[i]))
-        {
-            return ("Expression Invalid");
-        }
 
         // Current token is a number,
         // push it to stack for numbers
@@ -47,14 +86,14 @@ function Evaluate(expression)
             let sbuf = "";
 
             // There may be more than
-            // one digits in number
+            // 1 digits in number
             while (i < tokens.length &&
             tokens[i] >= '0' &&
             tokens[i] <= '9')
             {
                 sbuf = sbuf + tokens[i++];
             }
-            values.push(parseInt(sbuf, 10));
+            values.push(parseFloat(sbuf));
 
             // Right now the i points to
             // the character next to the digit,
@@ -166,9 +205,9 @@ function applyOp(op, b, a)
             break;
         case '/':
             if (b === 0)
-               ans = ("(Cannot divide by zero)  ");
+               ans = ("Cannot divide by zero ");
             else
-                ans= parseFloat(a / b);
+                ans= parseFloat(a/ b);
             break;
         default:
             ans= ("Invalid Expression ");

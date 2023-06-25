@@ -11,15 +11,27 @@ function App() {
     function evaluateExpression (){
 
         // console.log('Hi');
-        state = Evaluate(state);
-        setState(state);
+        // state =( Evaluate(state)).toString();
+        let ans = Evaluate(state);
+        if(typeof(ans) === 'number'){
+            ans = ans.toString();
+        }
+        if(ans === undefined)
+            ans = "";
+        setState(ans);
 
     }
-    function handleInputKeyBoard(e) {
-        if(state === '(Cannot divide by zero)  '){
-            state = "";
-            setState(state);
+    function clear(){
+        state = "";
+        setState(state);
+    }
+    function stateCheck(){
+        if(state === 'Cannot divide by zero ' || state === 'Invalid Expression '){
+            clear();
         }
+    }
+    function handleInputKeyBoard(e) {
+        stateCheck();
         if (e.key === 'Enter') {
             evaluateExpression();
         } else {
@@ -29,17 +41,13 @@ function App() {
         }
     }
     function handleInputButton(e){
-
-        if(state === '(Cannot divide by zero)  '){
-            state = "";
-            setState(state);
-        }
+        stateCheck();
         if(e.target.id === '='){
+            console.log(typeof (state));
             evaluateExpression();
         }
         else if(e.target.id === 'clear'){
-            state = ``;
-            setState(state);
+            clear();
         }
         else {
             state += e.target.id;
